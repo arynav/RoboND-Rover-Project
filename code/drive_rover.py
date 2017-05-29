@@ -29,7 +29,10 @@ app = Flask(__name__)
 # Read in ground truth map and create 3-channel green version for overplotting
 # NOTE: images are read in by default with the origin (0, 0) in the upper left
 # and y-axis increasing downward.
-ground_truth = mpimg.imread('../calibration_images/map_bw.png')
+#ground_truth = mpimg.imread('../calibration_images/map_bw.png')
+ground_truth = mpimg.imread('C:/Users/ana/RoboND-Python-Starterkit/RoboND-Rover-Project/calibration_images/map_bw.png')
+
+
 # This next line creates arrays of zeros in the red and blue channels
 # and puts the map into the green channel.  This is why the underlying 
 # map output looks green in the display image
@@ -59,7 +62,7 @@ class RoverState():
         # of navigable terrain pixels.  This is a very crude form of knowing
         # when you can keep going and when you should stop.  Feel free to
         # get creative in adding new fields or modifying these!
-        self.stop_forward = 50 # Threshold to initiate stopping
+        self.stop_forward =100 # 50 # Threshold to initiate stopping
         self.go_forward = 500 # Threshold to go forward again
         self.max_vel = 2 # Maximum velocity (meters/second)
         # Image output from perception step
